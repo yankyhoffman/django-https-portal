@@ -1,6 +1,22 @@
 version: "3.9"
 
 services:
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAINS: "https-portal.com -> http://webapp:8000"
+      # STAGE: 'production' # Don't use production until staging works
+    depends_on:
+      - webapp
+    volumes:
+      - https-portal-data:/var/lib/https-portal
+      - static:/var/www/vhosts/https-portal.com:ro
+    networks:
+      https:
+
   nginx:
     image: nginx:1.23.3
     ports:
@@ -29,3 +45,4 @@ networks:
 volumes:
   db:
   static:
+  https-portal-data:
