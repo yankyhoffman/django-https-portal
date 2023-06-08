@@ -17,9 +17,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 SECRET_KEY = 'django-insecure-SECRET-KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.https-portal.com']
 
 # Application definition
 
