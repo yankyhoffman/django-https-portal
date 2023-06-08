@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  webapp:
+    build: .
+    networks:
+      - https
+    ports:
+      - "8000:8000"
+    volumes:
+      - db:/db
+      - static:/static
+
+networks:
+  https:
+
+volumes:
+  db:
+  static:
