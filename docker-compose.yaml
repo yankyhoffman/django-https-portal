@@ -8,7 +8,7 @@ services:
       - "443:443"
     environment:
       DOMAINS: "${DOMAIN} -> http://webapp:8000"
-      # STAGE: 'production' # Don't use production until staging works
+      STAGE: local
     depends_on:
       - webapp
     volumes:
