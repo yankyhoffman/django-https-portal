@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from os import environ
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -19,7 +21,7 @@ SECRET_KEY = 'django-insecure-SECRET-KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.https-portal.com']
+ALLOWED_HOSTS = [f".{environ.get('DOMAIN', 'localhost')}"]
 
 # Application definition
 
