@@ -7,13 +7,13 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      DOMAINS: "${DOMAIN} -> http://webapp:8000"
+      DOMAINS: "${DOMAIN} -> http://webapp:8000, static.${DOMAIN}"
       STAGE: local
     depends_on:
       - webapp
     volumes:
       - https-portal-data:/var/lib/https-portal
-      - static:/var/www/vhosts/${DOMAIN}:ro
+      - static:/var/www/vhosts/static.${DOMAIN}
     networks:
       https:
 
