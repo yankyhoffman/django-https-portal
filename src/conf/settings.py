@@ -24,7 +24,7 @@ DOMAIN = environ.get('DOMAIN', 'localhost')
 PROTO = 'http' if DEBUG else 'https'
 
 ALLOWED_HOSTS = [f".{DOMAIN}", 'localhost']
-
+CSRF_TRUSTED_ORIGINS = [f"https://{DOMAIN}"]
 # Application definition
 
 INSTALLED_APPS = [
