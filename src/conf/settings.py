@@ -23,7 +23,7 @@ DEBUG = False
 DOMAIN = environ.get('DOMAIN', 'localhost')
 PROTO = 'http' if DEBUG else 'https'
 
-ALLOWED_HOSTS = [f".{DOMAIN}"]
+ALLOWED_HOSTS = [f".{DOMAIN}", 'localhost']
 
 # Application definition
 
