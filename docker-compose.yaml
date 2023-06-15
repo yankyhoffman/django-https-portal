@@ -41,6 +41,11 @@ services:
       - db:/db
       - static:/static
 
+  redis:
+    image: redis:7.0.11
+    networks:
+      - https
+
 networks:
   https:
 
