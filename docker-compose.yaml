@@ -33,6 +33,7 @@ services:
     build: .
     environment:
       DOMAIN: ${DOMAIN:-example.com}
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-SECRET-KEY}
     networks:
       - https
     ports:
