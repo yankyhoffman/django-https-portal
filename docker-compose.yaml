@@ -8,7 +8,7 @@ services:
       - "443:443"
     environment:
       DOMAINS: "${DOMAIN} -> http://webapp:8000, static.${DOMAIN}"
-      STAGE: local
+      STAGE: ${STAGE:-local}
     depends_on:
       - webapp
     volumes:
