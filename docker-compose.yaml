@@ -7,7 +7,7 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      DOMAINS: "${DOMAIN} -> http://webapp:8000, static.${DOMAIN}"
+      DOMAINS: "${DOMAIN:-example.com} -> http://webapp:8000, static.${DOMAIN:-example.com}"
       STAGE: ${STAGE:-local}
     depends_on:
       - webapp
@@ -32,7 +32,7 @@ services:
   webapp:
     build: .
     environment:
-      DOMAIN: ${DOMAIN}
+      DOMAIN: ${DOMAIN:-example.com}
     networks:
       - https
     ports:

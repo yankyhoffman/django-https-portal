@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-SECRET-KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DOMAIN = environ.get('DOMAIN', 'localhost')
+DOMAIN = environ.get('DOMAIN', 'example.com')
 PROTO = 'http' if DEBUG else 'https'
 
 ALLOWED_HOSTS = [f".{DOMAIN}", 'localhost']
