@@ -27,6 +27,14 @@ PROTO = 'http' if DEBUG else 'https'
 
 ALLOWED_HOSTS = [f".{DOMAIN}", 'localhost']
 CSRF_TRUSTED_ORIGINS = [f"https://{DOMAIN}"]
+
+# HSTS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 
 INSTALLED_APPS = [
