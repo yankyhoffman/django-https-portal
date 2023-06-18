@@ -17,6 +17,13 @@ def index(request):
     else:
         form = MessageForm()
 
-        message = request.session.get('message', '')
+        message = request.session.get('message', '<no message set>')
 
     return render(request, 'core/index.html', {'message': message, 'form': form})
+
+
+def clear(request):
+    if 'message' in request.session:
+        del request.session['message']
+
+    return redirect('core:index')
